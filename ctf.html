@@ -1,0 +1,23 @@
+---
+layout: default
+title: "CTF Challenges"
+---
+
+<main class="page-content">
+    <div class="wrapper">
+        <h1>CTF Challenges</h1>
+        <ul class="post-list">
+            {% assign ctf_posts = site.posts | where: "categories", "ctf" %}
+            {% for post in ctf_posts %}
+            <li>
+                <span class="post-meta">{{ post.date | date: "%b %d, %Y" }}</span>
+                <h4>
+                    <a class="post-link" href="{{ post.url }}">
+                        {{ post.title }}
+                    </a>
+                </h4>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+</main>

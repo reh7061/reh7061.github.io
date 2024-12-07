@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{ page.title }}</title>
+    <link rel="stylesheet" href="/assets/main.css">
+    <link rel="stylesheet" href="dark-light.css" id="theme-link">
+</head>
+
+<body class="light-mode">
+    <header class="site-header" role="banner">
+        <div class="wrapper">
+            <a class="site-title" rel="author" href="/">Your awesome title</a>
+            <nav class="site-nav">
+                <a class="page-link" href="/">Home</a>
+                <a class="page-link" href="/about.html">About</a>
+                <a class="page-link" href="/posts.html">Posts</a>
+                <span class="theme-toggle" onclick="toggleTheme()">Toggle Dark/Light Mode</span>
+            </nav>
+        </div>
+    </header>
+
+    {{ content }}
+
+    <footer class="site-footer">
+        <div class="wrapper">
+            <p>&copy; 2024 Your awesome title. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        function toggleTheme() {
+            const body = document.body;
+            if (body.classList.contains('light-mode')) {
+                body.classList.remove('light-mode');
+                body.classList.add('dark-mode');
+            } else {
+                body.classList.remove('dark-mode');
+                body.classList.add('light-mode');
+            }
+        }
+    </script>
+</body>
+
+</html>

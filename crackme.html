@@ -1,0 +1,23 @@
+---
+layout: default
+title: "CrackMe Challenges"
+---
+
+<main class="page-content">
+    <div class="wrapper">
+        <h1>CrackMe Challenges</h1>
+        <ul class="post-list">
+            {% assign crackme_posts = site.posts | where: "categories", "crackme" %}
+            {% for post in crackme_posts %}
+            <li>
+                <span class="post-meta">{{ post.date | date: "%b %d, %Y" }}</span>
+                <h4>
+                    <a class="post-link" href="{{ post.url }}">
+                        {{ post.title }}
+                    </a>
+                </h4>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+</main>

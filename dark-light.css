@@ -1,0 +1,90 @@
+/* dark-light.css */
+
+/* Base Styling for Light and Dark Modes */
+
+/* Light Mode Styles (default) */
+body.light-mode {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+header.light-mode, footer.light-mode {
+    background-color: #f8f8f8;
+    color: #333333;
+}
+
+a.light-mode {
+    color: #1a0dab;
+}
+
+/* Dark Mode Styles */
+body.dark-mode {
+    background-color: #121212;
+    color: #e0e0e0;
+}
+
+header.dark-mode, footer.dark-mode {
+    background-color: #1e1e1e;
+    color: #e0e0e0;
+}
+
+a.dark-mode {
+    color: #bb86fc;
+}
+
+/* General Styles for Both Modes */
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Arial', sans-serif;
+}
+
+.site-title {
+    font-size: 2em;
+    text-align: center;
+    padding: 20px 0;
+}
+
+nav.site-nav {
+    text-align: center;
+}
+
+.site-nav .page-link {
+    text-decoration: none;
+    color: inherit;
+    margin: 0 15px;
+    transition: color 0.3s;
+}
+
+.site-nav .page-link:hover {
+    text-decoration: underline;
+    color: #ff5722;
+}
+
+.theme-toggle {
+    background-color: #007bff;
+    color: #ffffff;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.theme-toggle:hover {
+    background-color: #0056b3;
+}
+
+/* Button Styling for Dark/Light Mode */
+.theme-toggle-button {
+    font-size: 1em;
+    margin-top: 15px;
+    cursor: pointer;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    background-color: #333;
+    transition: background-color 0.3s;
+}
+
+.theme-toggle-button:hover {
+    background-color: #555;
+}
