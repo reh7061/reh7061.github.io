@@ -7,7 +7,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{{ page.title }}</title>
     <link rel="stylesheet" href="/assets/main.css">
-    <link rel="stylesheet" href="dark-light.css" id="theme-link">
 </head>
 
 <body class="light-mode">
@@ -32,17 +31,35 @@
     </footer>
 
     <script>
-        function toggleTheme() {
-            const body = document.body;
-            if (body.classList.contains('light-mode')) {
-                body.classList.remove('light-mode');
-                body.classList.add('dark-mode');
-            } else {
-                body.classList.remove('dark-mode');
-                body.classList.add('light-mode');
-            }
-        }
-    </script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // Select all code blocks
+            const codeBlocks = document.querySelectorAll("div.highlight");
+        
+            codeBlocks.forEach(block => {
+                // Create the copy button
+                const button = document.createElement("button");
+                button.className = "copy-button";
+                button.textContent = "Copy";
+                
+                // Append the button to the code block container
+                block.style.position = "relative"; // Ensure relative position for button placement
+                block.appendChild(button);
+        
+                // Copy the text to the clipboard
+                button.addEventListener("click", () => {
+                    const code = block.querySelector("pre").innerText;
+                    navigator.clipboard.writeText(code).then(() => {
+                        button.textContent = "Copied!";
+                        setTimeout(() => button.textContent = "Copy", 2000);
+                    }).catch(err => {
+                        console.error("Error copying text: ", err);
+                        button.textContent = "Error";
+                    });
+                });
+            });
+        });
+        </script>
+        
 </body>
 
 </html>
