@@ -27,3 +27,4 @@ paginate: 5 # amount of posts to show
 paginate_path: /posts:num/
 plugins:
   - jekyll-paginate-v2
+  - jekyll-include-cache
