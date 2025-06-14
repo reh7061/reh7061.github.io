@@ -1,0 +1,73 @@
+---
+title: "Archive"
+layout: default          # built-in “posts” timeline layout :contentReference[oaicite:1]{index=1}
+author_profile: false
+---
+
+<div class="timeline-container">
+  <h1 class="page-title">{{ page.title }}</h1>
+  <ul class="timeline">
+    {% for post in site.posts %}
+      <li class="timeline-item">
+        <span class="timeline-date">{{ post.date | date: "%b %d, %Y" }}</span>
+        <div class="timeline-content">
+          <h2><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
+          <p>{{ post.excerpt | strip_html | truncatewords: 30 }}</p>
+        </div>
+      </li>
+    {% endfor %}
+  </ul>
+</div>
+
+<style>
+.timeline-container {
+  max-width: 800px;
+  margin: auto;
+  padding: 2rem 1rem;
+  font-family: sans-serif;
+}
+
+.timeline {
+  list-style: none;
+  padding: 0;
+  border-left: 2px solid #ccc;
+  margin-left: 1rem;
+}
+
+.timeline-item {
+  position: relative;
+  margin: 1.5rem 0;
+  padding-left: 1.5rem;
+}
+
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  left: -9px;
+  top: 0.3rem;
+  width: 14px;
+  height: 14px;
+  background: #555;
+  border-radius: 50%;
+  border: 2px solid white;
+}
+
+.timeline-date {
+  font-size: 0.85rem;
+  color: #888;
+}
+
+.timeline-content h2 {
+  margin: 0.3rem 0;
+  font-size: 1.2rem;
+}
+
+.timeline-content a {
+  text-decoration: none;
+  color: #007acc;
+}
+
+.timeline-content a:hover {
+  text-decoration: underline;
+}
+</style>
